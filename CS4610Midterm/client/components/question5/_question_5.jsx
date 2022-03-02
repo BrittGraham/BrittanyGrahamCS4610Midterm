@@ -6,6 +6,7 @@ export const Question5 = () => {
   const api = useContext(ApiContext);
   const [todos, setTodos] = useState([]);
   const [content, setContent] = useState('');
+  const [isComplete, setIsComplete] = useState('');
 
   useEffect(async () => {
     const { todos } = await api.get('/todos');
@@ -16,6 +17,19 @@ export const Question5 = () => {
     // make the api call to save a todo here.
     // remember to add the newly created todo item to the list of
     // todos with the setTodos method.
+    setIsComplete(false);
+    fetch('/todo', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        content,
+        isComplete,
+      })
+    })
+    window.location.reload(false);
   };
 
   return (
@@ -36,7 +50,7 @@ export const Question5 = () => {
         </button>
       </div>
       {todos.map((todo) => (
-        <Todo todo={todo} key={todo.id} />
+        <Todo todo={todo} key={todo.id} content = {todo.content} />
       ))}
     </div>
   );

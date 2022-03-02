@@ -2,8 +2,14 @@ import { useState } from 'react';
 import { Counter } from './Counter';
 
 export const Question1 = () => {
-  const [count, setCount] = useState(0)
+  const ranges = [
+    {min: -5, max: 5},
+    {min: -15, max: -5},
+    {min: 5, max: 15}
+  ]
   return <div>
-    {/* {Counter(-5, 5, count, setCount)} */}
-  </div>
+    {ranges.map((range) => {
+      return <Counter min = {range.min} max = {range.max}></Counter>
+    })}
+  </div>;
 };

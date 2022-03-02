@@ -6,19 +6,16 @@ export const Question3 = () => {
   const api = useContext(ApiContext);
   const [transacts, setTransacts] = useState([]);
   useEffect(async () => {
-    const {transact} = await api.get('/transactions');
+    const {transacts} = await api.get('/transactions');
+    setTransacts(transacts);
   })
 
   return (
   <div>
     <div className='transaction-container'>
-      {/* {transacts.map((trans) => ( */}
-        {/* <div key={product.id}> */}
-          {/* <p>{trans.amount}</p> */}
-          {/* <p>{trans.fromUser.name}</p> */}
-          {/* <p>{trans.toUser.name}</p> */}
-        {/* </div> */}
-      {/* ))} */}
+      {/* {transacts.map((trans) => (
+        Transactions
+      ))} */}
     </div>
   </div>
   );
