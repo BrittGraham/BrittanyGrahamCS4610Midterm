@@ -1,3 +1,9 @@
+import { useState } from 'react';
+import { Counter } from './Counter';
+
 export const Question1 = () => {
-  return <div>Render your counters here!</div>;
+  const [count, setCount] = useState(0)
+  return <div>
+    {/* {Counter(-5, 5, count, setCount)} */}
+  </div>
 };

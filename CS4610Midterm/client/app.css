@@ -3,3 +3,16 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.user {
+    border: 1px solid black; 
+    margin-bottom: 20px;
+    background-color: #aeaffc;
+    width: 30%; 
+    padding: 20px; 
+    overflow-wrap: break-word;
+}
+
+.isAdmin {
+    color: green;
+}
