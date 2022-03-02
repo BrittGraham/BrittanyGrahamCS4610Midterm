@@ -12,13 +12,13 @@ export const Question3 = () => {
   return (
   <div>
     <div className='transaction-container'>
-      {transacts.map((trans) => (
-        <div key={product.id}>
-          <p>{trans.amount}</p>
-          <p>{trans.fromUser.name}</p>
-          <p>{trans.toUser.name}</p>
-        </div>
-      ))}
+      {/* {transacts.map((trans) => ( */}
+        {/* <div key={product.id}> */}
+          {/* <p>{trans.amount}</p> */}
+          {/* <p>{trans.fromUser.name}</p> */}
+          {/* <p>{trans.toUser.name}</p> */}
+        {/* </div> */}
+      {/* ))} */}
     </div>
   </div>
   );
