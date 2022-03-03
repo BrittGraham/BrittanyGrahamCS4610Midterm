@@ -9,6 +9,7 @@ import { AuthGuard } from './providers/guards/auth.guard';
 import { RolesGuard } from './providers/guards/roles.guard';
 import { JwtService } from './providers/services/jwt.service';
 import { RolesService } from './providers/services/roles.service';
+import { TodosService } from './providers/services/todos.service';
 import { UsersService } from './providers/services/users.service';
 import { GuardUtil } from './providers/util/guard.util';
 
@@ -18,6 +19,7 @@ import { GuardUtil } from './providers/util/guard.util';
   providers: [
     UsersService,
     RolesService,
+    TodosService,
     JwtService,
     GuardUtil,
     { provide: APP_GUARD, useClass: AuthGuard }, // auth guard should come before roles guard

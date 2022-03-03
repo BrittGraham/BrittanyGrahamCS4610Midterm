@@ -6,8 +6,10 @@ export const Todo = ({ todo }) => {
   const [isComplete, setIsComplete] = useState(false);
   useEffect(async () => {
     //does not keep the box checked when page reloads.
+    //I do not know why this doesn't keep the checkbox checked.
+    // I would love to get some feedback as to what I did wrong, and
+    // how I could have fixed the problem.
     const checkCompleted = await api.get('/todos');
-    checkCompleted = isComplete
     if(checkCompleted === true){
       setIsComplete(true);
       setCheckboxChecked(true);
@@ -20,7 +22,7 @@ export const Todo = ({ todo }) => {
     // you wont actually need to do anything with the result of the API call
     // because we are optimistically updating the state.
     // When you refresh the page you should see your state persist.
-    fetch('/UpdateTodo', {
+    fetch('/updateTodo', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

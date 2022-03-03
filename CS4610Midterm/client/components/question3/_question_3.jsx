@@ -10,12 +10,18 @@ export const Question3 = () => {
     setTransacts(transacts);
   })
 
+  //I'm not understading why this isn't working.
+  // Note in Transactions component.
   return (
   <div>
     <div className='transaction-container'>
-      {/* {transacts.map((trans) => (
-        Transactions
-      ))} */}
+      <div>
+        {/* {transacts.map((trans) => (
+          <div>
+            {trans.fromUser.name} {trans.amount} {trans.toUser.name}
+          </div>
+        ))} */}
+      </div>
     </div>
   </div>
   );

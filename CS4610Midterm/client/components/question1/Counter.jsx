@@ -1,29 +1,53 @@
 import { useState } from "react";
-const [count, setCount] = useState('');
 
+//I cannot for the life of me figure out why it throws an error when loading the
+// page. I would love some feed back as to why this isn't working. I'm having a hard time 
+// understanding how to put this component into the _question_1 component.
+// Wouldn't it be easier to have it all in the same component?
 export const Counter = (min, max) => {
-    count = 0;
+    const [count, setCount] = useState(0);
     var minimum = min.minimum;
     var maximum = max.maximum;
-    const Increment = () => {
-        if(count < maximum){
-            setCount(count + 1);
+    // if (count == 0){
+    //     setCount(minimum);
+    // }
+    const setInitialCount = () => {
+        if(minimum > 0){
+            return (
+                <h2>
+                    { setCount(minimum) }
+                </h2>
+            )
         }
-        else if (count === maximum){
+        else if(maximum < 0){
+            <h2>
+                { setCount(maximum) }
+            </h2>
+        }
+        else{
+            <h2>
+                { setCount(0) }
+            </h2>
+        }
+    }
+    const Increment = () => {
+        if(count === maximum){
             setCount(maximum);
+        }
+        else{
+            setCount(count + 1);
         }
     }
     const Decrement = () => {
-        if (count > minimum){
-            setCount(minimum - 1);
-        }
-        else if(count === minimum){
+        if (count === minimum){
             setCount(minimum);
+        }
+        else{
+            setCount(minimum - 1);
         }
     }
     return (
         <div>
-            <h2>{count}</h2>
             <div>
                 <button onClick={Decrement()}>Decrement</button>
                 <button onClick={Increment()}>Increment</button>
