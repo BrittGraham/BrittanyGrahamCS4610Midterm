@@ -17,11 +17,10 @@ export const Question3 = () => {
     <div className='transaction-container'>
       <div>
         Cannot get transactions to show up.
-        {/* {transacts.map((trans) => (
-          <div>
-            {trans.fromUser.name} {trans.amount} {trans.toUser.name}
-          </div>
-        ))} */}
+        {/* <textarea 
+          name="p-2 border-2 rounded flex" 
+          value={transacts}/> */}
+          <Transactions transact={transacts}/>
       </div>
     </div>
   </div>
