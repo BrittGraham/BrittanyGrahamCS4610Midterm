@@ -9,6 +9,7 @@ export const Question1 = () => {
     {min: 5, max: 15}
   ]
   return <div>
+    Cannot get counters to show up.
     {/* {ranges.map((range) => {
       return <Counter min = {range.min} max = {range.max}></Counter>
     })} */}

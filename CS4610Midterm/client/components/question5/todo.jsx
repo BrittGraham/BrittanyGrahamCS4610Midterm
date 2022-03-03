@@ -22,6 +22,7 @@ export const Todo = ({ todo }) => {
     // you wont actually need to do anything with the result of the API call
     // because we are optimistically updating the state.
     // When you refresh the page you should see your state persist.
+    setIsComplete(true);
     fetch('/updateTodo', {
       method: 'POST',
       headers: {
@@ -38,7 +39,7 @@ export const Todo = ({ todo }) => {
 
   return (
     <div className="p-4 border-2 border-gray-500 rounded">
-      <input type="checkbox" checked={checkboxChecked} onChange={onCheckboxChange} /> {todo.content}
+      <input type="checkbox" checked={checkboxChecked} onChange={onCheckboxChange}/> {todo.content}
     </div>
   );
 };

@@ -16,6 +16,7 @@ export const Question3 = () => {
   <div>
     <div className='transaction-container'>
       <div>
+        Cannot get transactions to show up.
         {/* {transacts.map((trans) => (
           <div>
             {trans.fromUser.name} {trans.amount} {trans.toUser.name}

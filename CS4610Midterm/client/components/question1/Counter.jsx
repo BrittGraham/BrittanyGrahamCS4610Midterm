@@ -48,6 +48,7 @@ export const Counter = (min, max) => {
     }
     return (
         <div>
+            <div>{setInitialCount()}</div>
             <div>
                 <button onClick={Decrement()}>Decrement</button>
                 <button onClick={Increment()}>Increment</button>
